@@ -51,8 +51,8 @@ public class MagicLeapHome {
 	//Method to check existence of KeepInTouchSegment
 	public boolean MagicLeapOneCreatorIsExist() {
 
-		//explicit wait for the image element 
-		new WebDriverWait(driver, 70).until(ExpectedConditions.presenceOfElementLocated(MagicLeapOneCreator));
+		//explicit wait for the image element is added because sometimes loading of image is not fast as implicit wait time
+		new WebDriverWait(driver, 100).until(ExpectedConditions.presenceOfElementLocated(MagicLeapOneCreator));
 		boolean result = driver.findElement(MagicLeapOneCreator).isDisplayed();
 
 		return result;
